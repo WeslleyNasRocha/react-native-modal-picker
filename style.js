@@ -6,7 +6,7 @@ const {height, width} = Dimensions.get('window');
 
 const PADDING = 8;
 const BORDER_RADIUS = 5;
-const FONT_SIZE = 16;
+const FONT_SIZE = 20;
 const HIGHLIGHT_COLOR = 'rgba(0,118,255,0.9)';
 const OPTION_CONTAINER_HEIGHT = 400;
 
@@ -15,26 +15,32 @@ export default StyleSheet.create({
     overlayStyle: {
         width: width,
         height: height,
-        backgroundColor: 'rgba(0,0,0,0.7)'
+        backgroundColor: 'rgba(0,0,0,0.2)',
+        justifyContent: 'flex-end',
     },
 
     optionContainer: {
         borderRadius:BORDER_RADIUS,
-        width:width*0.8,
-        height:OPTION_CONTAINER_HEIGHT,
-        backgroundColor:'rgba(255,255,255,0.8)',
-        left:width*0.1,
-        top:(height-OPTION_CONTAINER_HEIGHT)/2
+        maxHeight:OPTION_CONTAINER_HEIGHT,
+        backgroundColor:'#fff',
+        left: 8,
+        right: 8,
+        width: width -16,
     },
 
     cancelContainer: {
-        left:width*0.1,
-        top:(height-OPTION_CONTAINER_HEIGHT)/2 + 10
+        left: 8,
+        right: 8,
+        bottom: 8,
+        marginTop: 32,
+        backgroundColor: '#fff',
+        borderRadius:BORDER_RADIUS,
+        width: width -16,
     },
 
     selectStyle: {
         flex: 1,
-        borderColor: '#ccc',
+        borderColor: '#fff',
         borderWidth: 1,
         padding: 8,
         borderRadius: BORDER_RADIUS
@@ -48,19 +54,19 @@ export default StyleSheet.create({
 
     cancelStyle: {
         borderRadius: BORDER_RADIUS,
-        width: width * 0.8,
+        width: width -16,
         backgroundColor: 'rgba(255,255,255,0.8)',
         padding: PADDING
     },
 
     cancelTextStyle: {
         textAlign: 'center',
-        color: '#333',
-        fontSize: FONT_SIZE
+        color: HIGHLIGHT_COLOR,
+        fontSize: 30
     },
 
     optionStyle: {
-        padding: PADDING,
+        paddingVertical: PADDING,
         borderBottomWidth: 1,
         borderBottomColor: '#ccc'
     },
@@ -74,7 +80,7 @@ export default StyleSheet.create({
     sectionStyle: {
         padding: PADDING * 2,
         borderBottomWidth: 1,
-        borderBottomColor: '#ccc'
+        borderBottomColor: '#fff'
     },
 
     sectionTextStyle: {
